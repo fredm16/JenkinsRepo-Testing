@@ -4,23 +4,17 @@ agent any
 stages{
     stage ('Compile Stage')
         stage{
-        withMaven(maven: 'maven-3-8-4')     {
-                sh 'mvn clean compile'
-             }
+       echo 'Compiling Application...'
         }
     }
     stage('Testing Stage'){
         stage{
-        withMaven(maven: 'maven-3-8-4')     {
-                sh 'mvn test'
-             }
+        echo 'Testing Application...'
         }
     }
     stage('Deployment Stage'){
         stage{
-        withMaven(maven: 'maven-3-8-4')     {
-                sh 'mvn deploy'
-             }
+       echo 'Deploying Application...'
         }
     }
 }
